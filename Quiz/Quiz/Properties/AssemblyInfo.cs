@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("SakthimudraQuiz")]
+[assembly: AssemblyTitle("Quiz")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("SakthimudraQuiz")]
+[assembly: AssemblyProduct("Quiz")]
 [assembly: AssemblyCopyright("Copyright ©  2020")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("c6f81232-e2bb-4400-bf5a-3da5c340b2d1")]
+[assembly: Guid("f030e2d5-4b6f-4dd4-ba4d-c4e9bc9ac3a2")]
 
 // Version information for an assembly consists of the following four values:
 //
