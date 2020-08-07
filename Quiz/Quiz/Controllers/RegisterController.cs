@@ -20,8 +20,7 @@ namespace Quiz.Controllers
         [HttpPost]
         public ActionResult Index(Users user)
         {
-            var Register = db.RegisterUser(user);
-            return Register == "Success" ? Redirect("/") : null;
+            return db.RegisterUser(user) ? RedirectToAction("/") : null;
         }
     }
 }

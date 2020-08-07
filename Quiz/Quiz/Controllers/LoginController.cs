@@ -20,8 +20,16 @@ namespace Quiz.Controllers
         [HttpPost]
         public ActionResult Index(Users formUsers)
         {
-            var UserName = db.CheckLogin(formUsers);
-            return UserName != null ? RedirectToAction("") : null; 
+            var GetName = db.GetUser(formUsers);
+            if (GetName != null )
+            {
+                Session["UserName"] = GetName;
+                return RedirectToAction("Index", "Exam");
+            }
+            else
+            {
+                return Redirect("/");
+            }
         }
     }
 }

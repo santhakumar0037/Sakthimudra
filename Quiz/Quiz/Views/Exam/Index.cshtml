@@ -1,0 +1,25 @@
+﻿
+@{
+    ViewData["Title"] = "Dashboard";
+}
+
+@{
+    var StudentName = ViewData["UserName"];
+}
+
+<h1 class="Center">Dashboard</h1>
+
+<h5>Welcome @StudentName</h5>
+
+<p>Please choose your quiz type from the below list</p>
+
+<div class="Center DashboardMargin">
+    <div class="list-group">
+        <a href="@Url.Action("Personality", "Quiz")" class="list-group-item list-group-item-action list-group-item-primary">Personality</a>
+        <a href="@Url.Action("Interest", "Quiz")" class="list-group-item list-group-item-action list-group-item-secondary">Interest</a>
+        <a href="#" class="list-group-item list-group-item-action list-group-item-success">Intelligence</a>
+        <a href="#" class="list-group-item list-group-item-action list-group-item-danger">Aptitude</a>
+        <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Skills</a>
+        <a href="#" class="list-group-item list-group-item-action list-group-item-info">Values</a>
+    </div>
+</div>
