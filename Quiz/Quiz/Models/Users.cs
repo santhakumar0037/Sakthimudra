@@ -16,12 +16,19 @@ namespace Quiz.Models
         [Required]
         public string Name { get; set; }
         [Required]
+        [Display(Name = "User Name")]
         public string UserName { get; set; }
         [Required]
+        [DataType(DataType.EmailAddress)]
         public string Email { get; set; }
         [Required]
-        public int MobileNumber { get; set; }
+        [DataType(DataType.PhoneNumber)]
+        [Display(Name = "Mobile Number")]
+        [RegularExpression(@"^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$", ErrorMessage = "Not a valid phone number")]
+        public string MobileNumber { get; set; }
         [Required]
+        [Display(Name = "User Password")]
+        [DataType(DataType.Password)]
         public string UserPassword { get; set; }
         [Required]
         public string DOB { get; set; }

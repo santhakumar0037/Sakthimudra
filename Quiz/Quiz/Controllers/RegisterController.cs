@@ -8,20 +8,20 @@ using Quiz.DBL;
 
 namespace Quiz.Controllers
 {
-    public class LoginController : Controller
+    public class RegisterController : Controller
     {
         new readonly Users User = new Users();
         DBClass db = new DBClass();
+        [HttpGet]
         public ActionResult Index()
         {
             return View(User);
         }
-
         [HttpPost]
-        public ActionResult Index(Users formUsers)
+        public ActionResult Index(Users user)
         {
-            var UserName = db.CheckLogin(formUsers);
-            return UserName != null ? RedirectToAction("") : null; 
+            var Register = db.RegisterUser(user);
+            return Register == "Success" ? Redirect("/") : null;
         }
     }
 }
