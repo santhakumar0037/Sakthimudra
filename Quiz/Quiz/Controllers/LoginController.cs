@@ -4,16 +4,32 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Quiz.Models;
+using Quiz.DBL;
 
 namespace Quiz.Controllers
 {
     public class LoginController : Controller
     {
-        // GET: Login
+        Users user = new Users();
+        DBClass db = new DBClass();
         public ActionResult Index()
         {
-            Users user = new Users();
             return View(user);
         }
+
+        [HttpPost]
+        public ActionResult Index(Users formUsers)
+        {
+            var UserName = db.CheckLogin(formUsers);
+            if (UserName != null)
+            {
+                return Redirect("/");
+            }
+            else
+            {
+                return RedirectToAction("Register");
+            }
+        }
+
     }
 }
