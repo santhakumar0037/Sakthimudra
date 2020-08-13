@@ -1,0 +1,61 @@
+﻿@model IEnumerable<Quiz.Models.Interest>
+
+
+
+@{
+    ViewData["Title"] = "Interest";
+}
+
+<h1>Interest</h1>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.LabelFor(model => model.First().InterestId)
+            </th>
+            <th>
+                @Html.LabelFor(model => model.First().Questions)
+            </th>
+            <th>
+                Never
+            </th>
+            <th>
+                Maybe
+            </th>
+            <th>
+                Yes
+            </th>
+            <th>
+                Definitely
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @item.InterestId
+            </td>
+            <td>
+                @item.Questions
+            </td>
+            <td>
+                @Html.RadioButtonFor(modelItem => item.Answers[item.InterestId], "false")
+            </td>
+            <td>
+                @Html.RadioButtonFor(modelItem => item.Answers[item.InterestId], "false")
+            </td>
+            <td>
+                @Html.RadioButtonFor(modelItem => item.Answers[item.InterestId], "false")
+            </td>
+            <td>
+                @Html.RadioButtonFor(modelItem => item.Answers[item.InterestId], "false")
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>

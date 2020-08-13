@@ -1,0 +1,60 @@
+﻿@model IList<Quiz.Models.Personality>
+
+@{
+    ViewBag.Title = "Personality";
+}
+
+<h2>Personality</h2>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.LabelFor(model => model.First().personalityId)
+            </th>
+            <th>
+                @Html.LabelFor(model => model.First().Questions)
+            </th>
+            <th>
+                Never
+            </th>
+            <th>
+                Maybe
+            </th>
+            <th>
+                Yes
+            </th>
+            <th>
+                Definitely
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @item.personalityId
+                </td>
+                <td>
+                    @item.Questions
+                </td>
+                <td>
+                    @Html.RadioButtonFor(modelItem => item.Answers[item.personalityId], "false")
+                </td>
+                <td>
+                    @Html.RadioButtonFor(modelItem => item.Answers[item.personalityId], "false")
+                </td>
+                <td>
+                    @Html.RadioButtonFor(modelItem => item.Answers[item.personalityId], "false")
+                </td>
+                <td>
+                    @Html.RadioButtonFor(modelItem => item.Answers[item.personalityId], "false")
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
